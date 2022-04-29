@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "f0ef150b-ec6a-4318-abe7-a80b1395e57d",
+		"name": "proUBC inbound API v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "proUBC tenants read",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{sappassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sapuser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{xcsrftoken}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/proubc/tenants",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"proubc",
+						"tenants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proUBC tenants read single entry",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{sappassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sapuser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{xcsrftoken}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/proubc/tenants",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"proubc",
+						"tenants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proUBC tenants delete entry",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{sappassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sapuser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{xcsrftoken}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/proubc/tenants/1",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"proubc",
+						"tenants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proUBC tenants create",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{sappassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sapuser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{xcsrftoken}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"ORGANIZATION_ID\": \" orgid from prvd cli \",\r\n        \"BPI_ENDPOINT\": \"HTTPS://BASELINE.PROVIDE.NETWORK\",\r\n        \"IDENT_ENDPOINT\": \"https://ident.provide.services\",\r\n        \"REFRESH_TOKEN\": \" first 1024 chars of the refresh token \",\r\n        \"REFRESH_TOKENEXT\": \" remaining chars of refresh token\",\r\n        \"CREATEDBY\": \" \",\r\n        \"CREATED_AT\": 0,\r\n        \"CHANGEDBY\": \"\",\r\n        \"CHANGED_AT\": 0\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/proubc/tenants",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"proubc",
+						"tenants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proUBC tenants update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{sappassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sapuser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{xcsrftoken}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"ORGANIZATION_ID\": \" org id from prvd CLI \",\r\n        \"BPI_ENDPOINT\": \"HTTPS://BASELINE.PROVIDE.NETWORK\",\r\n        \"IDENT_ENDPOINT\": \"https://ident.provide.services\",\r\n        \"REFRESH_TOKEN\": \" first 1024 chars of refresh token \",\r\n        \"REFRESH_TOKENEXT\": \" remaining chars of the refresh token\",\r\n        \"CREATEDBY\": \"STUDENT085\",\r\n        \"CREATED_AT\": 0,\r\n        \"CHANGEDBY\": \"\",\r\n        \"CHANGED_AT\": 0\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/proubc/tenants",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"proubc",
+						"tenants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "xsrf token fetch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"    //get X-CSRF-Token and save it to variable\r",
+							"});\r",
+							"\r",
+							"pm.test(\"X-CSRF-Token is present\", function () {\r",
+							"    pm.response.to.have.header(\"X-CSRF-Token\");\r",
+							"    var xsrf = pm.response.headers.get(\"X-CSRF-Token\");\r",
+							"    pm.environment.set(\"xcsrftoken\", xsrf);\r",
+							"    //pm.setEnvironmentVariable('xcsrftoken', \"yah\");\r",
+							"    //get X-CSRF-Token and save it to variable\r",
+							"});\r",
+							"   // var xsrfCookie = postman.getResponseCookie(\"X-CSRF-Token\"); \r",
+							"   //var xsrf = pm.response.header(\"X-CSRF-Token\");\r",
+							"   // postman.setEnvironmentVariable('xcsrftoken', xsrfCookie.value);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{sappassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sapuser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "Fetch",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"Id\" : \"999\",\r\n        \"price\" : \"-170.10\",\r\n        \"currency\" : \"XXX\",\r\n        \"amount\" : \"1.9870\",\r\n        \"unit\" : \"YY\",\r\n        \"test_currency\" : \"ZZZ\",\r\n        \"test_unit\" : \"ZZ\",\r\n        \"test_id\" : \"xyz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/opu/odata/IWBEP/TEA_TEST_APPLICATION/$metadata?X-CSRF-Token=Fetch",
+					"protocol": "https",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"port": "44300",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"IWBEP",
+						"TEA_TEST_APPLICATION",
+						"$metadata"
+					],
+					"query": [
+						{
+							"key": "X-CSRF-Token",
+							"value": "Fetch"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
