@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "a5435682-e03a-4043-89df-9fac59c56f63",
+		"name": "proUBC iDoc API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all idoc basic types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/bc/zidocapi/basictypes",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"bc",
+						"zidocapi",
+						"basictypes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get details of idoc type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{sapbaseurl}}/sap/bc/zidocapi/basictypes/ORDERS05",
+					"host": [
+						"{{sapbaseurl}}"
+					],
+					"path": [
+						"sap",
+						"bc",
+						"zidocapi",
+						"basictypes",
+						"ORDERS05"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{sappassword}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{sapuser}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
