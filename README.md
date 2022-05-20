@@ -5,6 +5,8 @@ Set up your companies organizations using the PRVD CLI and Provide Stack
 
 ## proUBC configuration
 Activate the proUBC SICF node in transaction code SICF of your SAP system
+Export the SSL certs from the PRVD APIs and upload them to the SAP system using transaction code STRUST. (You will encounter HTTP 407 errors without it!)
+
 
 ## Postman variables
 sapuser : The SAP service account user id for proUBC integration
